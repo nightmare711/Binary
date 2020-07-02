@@ -29,7 +29,7 @@ function App() {
         <Header
           color="transparent"
           route="/"
-          brand="Binari"
+          brand="Hello"
           rightLinks={<HeaderLinks />}
           fixed
           changeColorOnScroll={{

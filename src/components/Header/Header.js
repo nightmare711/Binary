@@ -1,4 +1,5 @@
 import React from "react";
+import './Header.css'
 // nodejs library that concatenates classes
 import { Link } from "react-router-dom";
 import classNames from "classnames";
@@ -11,6 +12,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Button from "@material-ui/core/Button";
 import Hidden from "@material-ui/core/Hidden";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faJoomla } from '@fortawesome/free-brands-svg-icons'
 import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
@@ -62,8 +65,8 @@ export default function Header(props) {
     [classes.fixed]: fixed
   });
   const brandComponent = (
-    <Link to={route} className={classes.link}>
-      <Button className={classes.title}>{brand}</Button>
+    <Link to="/" className={classes.link}>
+      <FontAwesomeIcon className="icon" icon={faJoomla} />
     </Link>
   );
   return (
