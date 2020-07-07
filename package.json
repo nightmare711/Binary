@@ -4,7 +4,7 @@
   "description": "A utility for developers to help understand Binary Trees",
   "private": true,
   "main": "dist/index.js",
-  "homepage": "https://mywebsite.com",
+  "homepage": ".",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
