@@ -1,5 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect,useContext } from "react";
 import classNames from "classnames";
+import Data from '../../data/context';
+import {Redirect} from 'react-router-dom';
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "components/CustomButtons/Button.js";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -27,15 +29,14 @@ const difficultyColorScheme = {
 };
 
 export default function Playground(props) {
+  const data = useContext(Data);
   const classes = useStyles();
   const [page, setPage] = useState(0);
   const [currentCode, setCode] = useState(beautify(chapter[page].defaultCode));
-
   let unsavedCode = currentCode;
   let log = [];
   let canvas;
   let debug;
-
   function changePage(newPage) {
     setPage(newPage);
     setCode(beautify(chapter[newPage].defaultCode));
@@ -93,89 +94,89 @@ export default function Playground(props) {
     debug = <Debug data={log} />;
   }
 
-  useEffect(() => {
-    console.dir(props);
-  });
-
-  return (
-    <>
-      <div className={"margin-top " + classes.margin}>
-        <div
-          className={
-            "floating-main " + classNames(classes.main, classes.mainRaised)
-          }
-        >
-          <div>
-            <GridContainer>
-              <GridItem xs={12} sm={2} md={2} lg={2}>
-                <Directory>
-                  {chapter.map((el, i) => (
-                    <tr
-                      onClick={() => changePage(i)}
-                      style={{ background: page === i && "#222" }}
-                      key={i}
+  if(data.isLogin) {
+    return (
+      <>
+        <div className={"margin-top " + classes.margin}>
+          <div
+            className={
+              "floating-main " + classNames(classes.main, classes.mainRaised)
+            }
+          >
+            <div>
+              <GridContainer>
+                <GridItem xs={12} sm={2} md={2} lg={2}>
+                  <Directory>
+                    {chapter.map((el, i) => (
+                      <tr
+                        onClick={() => changePage(i)}
+                        style={{ background: page === i && "#222" }}
+                        key={i}
+                      >
+                        <td>{i}</td>
+                        <td className={classes.lesson}>{el.name}</td>
+                        <td
+                          style={{
+                            background: difficultyColorScheme[el.difficulty]
+                          }}
+                          className={classes.difficulty}
+                        ></td>
+                      </tr>
+                    ))}
+                  </Directory>
+                </GridItem>
+                <GridItem xs={12} sm={5} md={5} lg={5}>
+                  <AceEditor
+                    mode="javascript"
+                    theme="twilight"
+                    name="code"
+                    width="100%"
+                    height="calc(100vh - 325px)"
+                    value={currentCode}
+                    onChange={val => (unsavedCode = val)}
+                    enableBasicAutocompletion={true}
+                    enableLiveAutocompletion={true}
+                    editorProps={{ $blockScrolling: false }}
+                  />
+                  {debug}
+                  <div className={classes.codeButtons}>
+                    <Button
+                      color="white"
+                      simple={true}
+                      onClick={() => setCode(unsavedCode)}
                     >
-                      <td>{i}</td>
-                      <td className={classes.lesson}>{el.name}</td>
-                      <td
-                        style={{
-                          background: difficultyColorScheme[el.difficulty]
-                        }}
-                        className={classes.difficulty}
-                      ></td>
-                    </tr>
-                  ))}
-                </Directory>
-              </GridItem>
-              <GridItem xs={12} sm={5} md={5} lg={5}>
-                <AceEditor
-                  mode="javascript"
-                  theme="twilight"
-                  name="code"
-                  width="100%"
-                  height="calc(100vh - 325px)"
-                  value={currentCode}
-                  onChange={val => (unsavedCode = val)}
-                  enableBasicAutocompletion={true}
-                  enableLiveAutocompletion={true}
-                  editorProps={{ $blockScrolling: false }}
-                />
-                {debug}
-                <div className={classes.codeButtons}>
-                  <Button
-                    color="white"
-                    simple={true}
-                    onClick={() => setCode(unsavedCode)}
-                  >
-                    {" "}
-                    Run Code{" "}
-                  </Button>
-                  <Button
-                    color="warning"
-                    simple={true}
-                    onClick={() => setCode(beautify(chapter[page].defaultCode))}
-                  >
-                    {" "}
-                    Reset{" "}
-                  </Button>
-                </div>
-              </GridItem>
-              <GridItem xs={12} sm={5} md={5} lg={5}>
-                <div className={classes.canvasRegion}>
-                  <SplitterLayout
-                    vertical={true}
-                    customClassName={classes.splitter}
-                    secondaryInitialSize={160}
-                  >
-                    {canvas}
-                    <Info text={chapter[page].lesson} />
-                  </SplitterLayout>
-                </div>
-              </GridItem>
-            </GridContainer>
+                      {" "}
+                      Run Code{" "}
+                    </Button>
+                    <Button
+                      color="warning"
+                      simple={true}
+                      onClick={() => setCode(beautify(chapter[page].defaultCode))}
+                    >
+                      {" "}
+                      Reset{" "}
+                    </Button>
+                  </div>
+                </GridItem>
+                <GridItem xs={12} sm={5} md={5} lg={5}>
+                  <div className={classes.canvasRegion}>
+                    <SplitterLayout
+                      vertical={true}
+                      customClassName={classes.splitter}
+                      secondaryInitialSize={160}
+                    >
+                      {canvas}
+                      <Info text={chapter[page].lesson} />
+                    </SplitterLayout>
+                  </div>
+                </GridItem>
+              </GridContainer>
+            </div>
           </div>
         </div>
-      </div>
-    </>
-  );
+      </>
+    );
+  }else {
+    return <Redirect to="/login" />
+  }
 }

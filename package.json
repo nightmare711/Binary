@@ -4,6 +4,7 @@
   "description": "A utility for developers to help understand Binary Trees",
   "private": true,
   "main": "dist/index.js",
+  "homepage": "https://tranhoang.github.io/my-app",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.29",
     "@fortawesome/free-brands-svg-icons": "^5.13.1",
@@ -23,6 +24,7 @@
     "react": "16.9.0",
     "react-ace": "^8.0.0",
     "react-bootstrap": "^1.0.1",
+    "react-d3-tree": "^1.16.1",
     "react-datetime": "2.16.3",
     "react-dom": "16.9.0",
     "react-markdown": "^4.3.1",

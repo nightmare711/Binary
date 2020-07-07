@@ -1,12 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import Sketch from "react-p5";
 import PropTypes from "prop-types";
-
 const Canvas = props => {
   const elementScale =
     window.devicePixelRatio < 2 ? 2 : window.devicePixelRatio;
   const windowSize = elementScale * 500;
-
   let tree = props.tree;
   tree.x = windowSize / 2;
   tree.y = 20 * elementScale;
@@ -59,8 +57,7 @@ const Canvas = props => {
       }
     });
   }
-
-  return <Sketch setup={setup} draw={draw} />;
+  return <Sketch setup={setup} draw={draw} />
 };
 
 Canvas.propTypes = {

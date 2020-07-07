@@ -68,7 +68,7 @@ const Debug = ({ data }) => {
     return (
       <div>
         <span className={classes.directory}>
-          {`binari@env/wrkspc${wrkspc}`}
+          {`$HoangTran`}
         </span>{" "}
         {"> "}
         {line}
