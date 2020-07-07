@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import {Redirect} from 'react-router-dom'
 import Graph from '../components/Graph';
 import Header from '../components/Header';
-import './App.css'
+import './main.css'
 import Data from '../../../data/context'
 
 function Node(value) {
