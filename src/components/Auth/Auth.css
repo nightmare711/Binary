@@ -1,0 +1,23 @@
+.Auth {
+    margin-top:100px;
+    margin-left: 150px;
+    width: 500px;
+    height:415px;
+    z-index: 1;
+    position: absolute;
+    
+}
+.form-label {
+    color:black;
+}
+.Auth p {
+    color:#2E2E2E;
+}
+.AuthForm {
+    padding:70px 70px 70px 70px;
+}
+.Auth .fade {
+    z-index: 1;
+    position: absolute;
+    width:360px;
+}

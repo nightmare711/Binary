@@ -1,0 +1,46 @@
+.items {
+    display:flex;
+    margin-top: 100px;
+    margin-right: 100px;
+    align-items: flex-start;
+    margin-left: 150px;
+    
+}
+.items .list {
+    width:500px;
+    height:495px;
+    border: 0.5px solid #D8D8D8;
+}
+.items .item1 {
+    margin-right:20px;
+    background-image: url('./images/Tran.jpg');
+}
+.items .item2 {
+    margin-right:20px;
+}
+.items .item3 {
+    margin-right:20px;
+}
+
+.items .card {
+    background-position: center;
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+    width:250px;
+    height:430px;
+}
+.items .background-img {
+    height:400px;
+}
+
+.items .card-body {
+    background-color:white;
+    height:100px;
+    transition: height 0.5s ease-in-out;
+    overflow: hidden;
+    color:black;
+}
+.items .card-body:hover{
+    height:290px;
+}
+
