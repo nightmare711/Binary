@@ -84,7 +84,6 @@ function App() {
             <Route path="/about" component={About} />
             <Route path="/visualize" component={Visualize} />
             <Route path="/" component={LandingPage} />
-            
           </Switch>
         </Router>
         <Footer />
