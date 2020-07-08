@@ -39,7 +39,7 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://github.com/BrandonArmand/Binari/blob/master/LICENSE.md"
+                href="https://www.instagram.com/?hl=vi"
                 className={classes.block}
                 target="_blank"
                 rel="noopener noreferrer"

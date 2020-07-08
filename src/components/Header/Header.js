@@ -80,7 +80,7 @@ export default function Header(props) {
             </Hidden>
           ) : (
             <Link to="/" className={classes.link}>
-              <FontAwesomeIcon className="icon" icon={faJoomla} />
+              <FontAwesomeIcon style={{fontSize: "50px"}} className="icon" icon={faJoomla} />
             </Link>
           )}
         </div>
