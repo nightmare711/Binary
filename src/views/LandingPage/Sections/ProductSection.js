@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import Money_off from "@material-ui/icons/MoneyOff";
+import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
 import Interactive from "@material-ui/icons/TouchApp";
 import lock from "@material-ui/icons/LockOpen";
 import GridContainer from "components/Grid/GridContainer.js";
@@ -20,7 +20,7 @@ export default function ProductSection() {
           <h2 className={classes.title}>Let{"'"}s talk code</h2>
           <h5 className={classes.description}>
             Understanding Data Structures and Algorithms can be hard, I&apos;ve
-            been there. That is why I built Binari, a one-stop shop for all
+            been there. Fortunately, the final project of my team is Binary Tree. That is why I built Binari, a one-stop shop for all
             things Binary Tree. Binari uses an interactive view so that you can
             fully encompass how Binary Trees operate.
           </h5>
@@ -30,9 +30,9 @@ export default function ProductSection() {
         <GridContainer className={classes.infoSection}>
           <GridItem xs={12} sm={12} md={4} className={classes.infoItem}>
             <InfoArea
-              title="Completely Free"
-              description="This app is, and always will be, completely free. Enjoy it till the day the internet implodes."
-              icon={Money_off}
+              title="Easy"
+              description="Easy to understand the Binary Tree, Easy to use, Easy to learn"
+              icon={SentimentVerySatisfiedIcon}
               iconColor="success"
               vertical
             />

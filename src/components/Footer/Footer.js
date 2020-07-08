@@ -4,6 +4,8 @@ import classNames from "classnames";
 import { List, ListItem } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/components/footerStyle.js";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faFacebookMessenger,faInstagramSquare} from '@fortawesome/free-brands-svg-icons'
 
 const useStyles = makeStyles(styles);
 
@@ -17,7 +19,7 @@ export default function Footer(props) {
 
   return (
     <footer className={footerClasses}>
-      <div className={classes.container}>
+      <div className={classes.container} style={{transform:"translate(1000px, 0px)"}}>
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
@@ -27,12 +29,12 @@ export default function Footer(props) {
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="http://brandonarmand.com"
+                href="https://www.facebook.com/messages/t/kudokun0711"
                 className={classes.block}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Brandon A. Welsh
+                <FontAwesomeIcon style={{fontSize:"30px", transform:"translate(20px,5px)"}} className="icon" icon={faFacebookMessenger} />
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -42,7 +44,7 @@ export default function Footer(props) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                MIT License
+                <FontAwesomeIcon style={{fontSize:"30px", transform:"translate(20px,5px)"}} className="icon" icon={faInstagramSquare} />
               </a>
             </ListItem>
           </List>
