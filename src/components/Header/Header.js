@@ -79,7 +79,9 @@ export default function Header(props) {
               {leftLinks}
             </Hidden>
           ) : (
-            brandComponent
+            <Link to="/" className={classes.link}>
+              <FontAwesomeIcon className="icon" icon={faJoomla} />
+            </Link>
           )}
         </div>
         <Hidden smDown implementation="css">

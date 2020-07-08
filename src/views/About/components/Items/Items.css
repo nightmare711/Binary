@@ -1,9 +1,9 @@
 .items {
     display:flex;
     margin-top: 100px;
-    margin-right: 100px;
+    margin-right: 120px;
     align-items: flex-start;
-    margin-left: 150px;
+    margin-left: 120px;
     
 }
 .items .list {
@@ -17,14 +17,24 @@
 }
 .items .item2 {
     margin-right:20px;
+    background-image: url('./images/danh.jpg');
 }
 .items .item3 {
     margin-right:20px;
+    background-image: url('./images/thanh.jpg');
+}
+.items .item4 {
+    margin-right:20px;
+    background-image: url('./images/tuyen.jpg');
+}
+.items .item5 {
+    background-image: url('./images/Phuoc.png');
 }
 
 .items .card {
     background-position: center;
-    background-size: 500px 500px;
+    background-size: cover;
+    
     background-repeat: no-repeat;
     width:250px;
     height:430px;

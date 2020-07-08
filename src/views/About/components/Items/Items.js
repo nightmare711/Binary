@@ -22,12 +22,11 @@ function Product() {
                     <br/>
                 </div>
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Phạm Quang Danh</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    You can check me out from here and asking some questions!
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <NavLink href="https://www.facebook.com/quangdanhhh"><Button variant="primary">Go to my Facebook</Button></NavLink>
                 </Card.Body>
             </Card>
             <Card  className='list item3'>
@@ -35,12 +34,11 @@ function Product() {
                     <br/>
                 </div>
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Nguyễn Tấn Thành</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    You can check me out from here and asking some questions!
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <NavLink href="https://www.facebook.com/tan.thanhhhh"><Button variant="primary">Go to my Facebook</Button></NavLink>
                 </Card.Body>
             </Card>
             <Card  className='list item4'>
@@ -48,12 +46,11 @@ function Product() {
                     <br/>
                 </div>
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Phan Ngọc Bảo Tuyền</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    You can check me out from here and asking some questions!
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <NavLink href="https://www.facebook.com/profile.php?id=100010702246953"><Button variant="primary">Go to my Facebook</Button></NavLink>
                 </Card.Body>
             </Card>
             <br></br>
@@ -62,12 +59,11 @@ function Product() {
                     <br/>
                 </div>
                 <Card.Body>
-                    <Card.Title>Card Title</Card.Title>
+                    <Card.Title>Phạm Hoàng Phước</Card.Title>
                     <Card.Text>
-                    Some quick example text to build on the card title and make up the bulk of
-                    the card's content.
+                    You can check me out from here and asking some questions!
                     </Card.Text>
-                    <Button variant="primary">Go somewhere</Button>
+                    <NavLink href="https://www.facebook.com/phuoc2690"><Button variant="primary">Go to my Facebook</Button></NavLink>
                 </Card.Body>
             </Card>
 
