@@ -40,6 +40,7 @@ function App() {
         insertVal:insertVal,
         setVal:setVal
       }} >
+        <Messenger />
         <Router history={hist}>
           <Header
             className="Header"
