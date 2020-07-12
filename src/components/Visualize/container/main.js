@@ -19,7 +19,6 @@ function Main() {
     const [verify,setVerify] = useState(false)
     const [text,setText] = useState()
     const array = []
-    
     function traverse(obj) {
         if (!obj) return null;
 
@@ -57,24 +56,108 @@ function Main() {
         setVerify(true)
     }
 
-    //Busca um valor na arvore e
-    //verifica se existe
     const search = valor => {
         var found = false 
         var noAtual = data.root
 
         while(!found && noAtual){
         if(valor < noAtual.value) {
+            array.push(noAtual.value)
             noAtual = noAtual.left
         }else if(valor > noAtual.value){
+            array.push(noAtual.value)
             noAtual = noAtual.right  
         }else{
+            array.push(noAtual.value);
+            setExibe(array)
             found = true
         }
         }
         return found
     }
-    //funções de caminhamento
+    const deleteNumber = valor =>{
+        var verify = deleteEle(valor)
+        if(verify){
+        setText("Sucess..")
+        }else{
+        setText("Failed...")
+        }
+        setVerify(true)
+    }
+    const deleteEle = (valor) => {
+        var found = false 
+        var noAtual = data.root;
+        var prevNode = noAtual;
+
+        while(!found && noAtual){
+        if(valor < noAtual.value) {
+            array.push(noAtual.value)
+            prevNode = noAtual;
+            noAtual = noAtual.left;
+        }else if(valor > noAtual.value){
+            
+            array.push(noAtual.value);
+            prevNode = noAtual;
+            noAtual = noAtual.right;
+        }else{
+            if(valor === data.root.value){
+
+                if(noAtual.left)
+                {
+                    data.root = noAtual.left;
+                    var temp = data.root;
+                    
+                    while(true) {
+                        if(!temp.right) {
+                            temp.right = noAtual.right;
+                            break;
+                        }
+                        temp = temp.right;
+                    }
+
+                    
+                } else {
+                    data.root = noAtual.right;
+                }
+            }
+            if(prevNode.left === noAtual) {
+
+                if(noAtual.left)
+                {
+                    prevNode.left = noAtual.left;
+                    prevNode = prevNode.left;
+                    while(true) {
+                        if(!prevNode.right) {
+                            prevNode.right=noAtual.right;
+                            break;
+                        }
+                        prevNode = prevNode.right;
+                    }
+                } else {
+                    prevNode.left = noAtual.right;
+                }
+            }
+            if(prevNode.right === noAtual) {
+                
+                if(noAtual.left){
+                    prevNode.right =noAtual.left;
+                    while(true) {
+                        if(!prevNode.right) {
+                            prevNode.right=noAtual.right;
+                            break;
+                        }
+                        prevNode = prevNode.right;
+                    }
+                } else {
+                    prevNode.right = noAtual.right;
+                }
+            }
+            setExibe(array)
+            found = true;
+        }
+        }
+        return found
+    }
     const em_ordem= (obj) =>{
         if(obj == null){
         setExibe(array)
@@ -123,6 +206,10 @@ function Main() {
         return res;
     };
     const insert = value => {
+        if(value == 0){
+            alert(`Can't set value 0 to node`);
+            return;
+        }
         let node = new Node(value);
         // Set this node to the root value
         if (!data.root) setData({ root: node });
@@ -149,7 +236,7 @@ function Main() {
         setVerify(false)
         return data;
     };
-
+    
     return (
         (Data1.isLogin) ? 
         <div className="Main">
@@ -165,6 +252,7 @@ function Main() {
                 searchNumber = {searchNumber}
                 verify = {verify}
                 text = {text}
+                deleteEle = {deleteNumber}
             />
             <Graph data={formatData(data)} />
         </div>:

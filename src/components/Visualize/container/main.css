@@ -27,7 +27,7 @@ body {
   flex-direction: row;
   z-index: 10;
   position: fixed;
-  transform: translate(10%,-122%);
+  transform: translate(7.5%,-122%);
   width: 1300px;
   height:580px;
   
@@ -50,6 +50,7 @@ body {
   flex-direction: row;
   flex: 1;
   background-color:white;
+  border: 1px gray solid;
 }
 
 .sidebar-wrapper {

@@ -18,8 +18,8 @@ export default function Footer(props) {
   });
 
   return (
-    <footer className={footerClasses}>
-      <div className={classes.container} style={{transform:"translate(1000px, 0px)"}}>
+    <footer className={footerClasses} style={{width:"300px"}}>
+      <div className={classes.container} style={{transform:"translate(1130px, 0px)"}}>
         <div className={classes.left}>
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>

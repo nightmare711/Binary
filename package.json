@@ -29,6 +29,7 @@
     "react-datetime": "2.16.3",
     "react-dom": "16.9.0",
     "react-markdown": "^4.3.1",
+    "react-messenger-customer-chat": "^0.8.0",
     "react-p5": "^1.1.8",
     "react-router-dom": "5.0.1",
     "react-scripts": "^3.3.0",

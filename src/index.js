@@ -17,6 +17,7 @@ import Visualize from './components/Visualize/container/main'
 import LandingPage from "views/LandingPage/LandingPage.js";
 import Playground from "views/Playground/Playground";
 import About from "views/About/About";
+import Messenger from './components/Messenger/Messenger'
 import MyContext from './data/context'
 var hist = createBrowserHistory();
 const useStyles = makeStyles(styles);
@@ -41,6 +42,7 @@ function App() {
       }} >
         <Router history={hist}>
           <Header
+            className="Header"
             color="transparent"
             route="/"
             brand="Hello"
@@ -52,7 +54,6 @@ function App() {
             }}
           />
           <Route path="/login" component={AuthLogin} />
-          
           <Parallax
             filter
             image={
@@ -74,6 +75,7 @@ function App() {
               </GridContainer>
               
             </div>
+            
           </Parallax>
           
           <Switch>

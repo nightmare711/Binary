@@ -1,6 +1,6 @@
 import React from 'react';
 import ExibeOrdem from './ExibeOrdem/index';
-const Sidebar = ({ verify,text,array,searchNumber,pre_ordem,em_ordem,pos_ordem,current, setCurrent, insert, data }) => {
+const Sidebar = ({ verify,text,array,searchNumber,pre_ordem,em_ordem,pos_ordem,current, setCurrent, insert, data,deleteEle,randomEle }) => {
   return (
 
     <div className="sidebar-wrapper">
@@ -35,6 +35,15 @@ const Sidebar = ({ verify,text,array,searchNumber,pre_ordem,em_ordem,pos_ordem,c
         <div style = {{paddingTop:2}}>
           <button
             className="next-node-button fullwidth"
+            disabled={!current || isNaN(current)}
+            onClick={() => deleteEle(parseInt(current,10))}
+          > 
+          Delete
+          </button>
+        </div>
+        <div style = {{paddingTop:2}}>
+          <button
+            className="next-node-button fullwidth"
             disabled={false}
             onClick={() => em_ordem(data.root)}
           > 
@@ -58,6 +67,16 @@ const Sidebar = ({ verify,text,array,searchNumber,pre_ordem,em_ordem,pos_ordem,c
               > 
               Post Order
           </button>
+        </div>
+        <div style = {{paddingTop:2}}>
+          <button
+            className="next-node-button fullwidth"
+            onClick={() => {
+              var value = parseInt((Math.floor(Math.random() * 100)),10);
+              insert(value);
+              setCurrent(value);
+            }}
+          >Random</button>
         </div>
       </div>
     <div className= "container-div"> 
