@@ -95,11 +95,6 @@ export default function About() {
                 <li>Optimizations</li>
               </ul>
             </GridItem>
-            <GridItem xs={12} sm={12} md={12}>
-              <a href="https://github.com/BrandonArmand/Binari/issues">
-                <h4 className={classes.footer}>Start Contributing</h4>
-              </a>
-            </GridItem>
           </GridContainer>
         </div>
       </div>
