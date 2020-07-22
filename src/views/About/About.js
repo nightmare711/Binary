@@ -19,20 +19,6 @@ export default function About() {
     redirect: "follow"
   };
 
-  useEffect(() => {
-    fetch(
-      `https://api.github.com/repos/brandonarmand/binari/stats/contributors`,
-      reqOptions
-    )
-      .then(response => response.json())
-      .then(
-        data =>
-          !data.message &&
-          setContributors(data.sort((a, b) => (a.total < b.total ? 1 : -1)))
-      );
-  });
-
-  console.log(contributors);
 
   return (
     <div>
